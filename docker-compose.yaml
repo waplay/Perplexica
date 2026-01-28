@@ -4,7 +4,7 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - data:/home/perplexica/data
+      - perplexica-data:/home/perplexica/data
     restart: unless-stopped
     networks:
       - dokploy-network
