@@ -1,14 +1,17 @@
 services:
   perplexica:
     image: itzcrazykns1337/perplexica:latest
-    build:
-      context: .
     ports:
       - '3000:3000'
     volumes:
       - data:/home/perplexica/data
     restart: unless-stopped
+    networks:
+      - dokploy-network
+
+networks:
+  dokploy-network:
+    external: true
 
 volumes:
-  data:
-    name: 'perplexica-data'
+  perplexica-data:
